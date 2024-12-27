@@ -1,0 +1,33 @@
+#navbar-container {
+  background-color: #f0f0f0; /* Light gray background */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem; /* Add horizontal padding */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  position: sticky; /* Make the navbar sticky */
+  top: 0; /* Stick to the top */
+  z-index: 100; /* Ensure it's on top of other content */
+}
+
+#navbar-container h1 {
+  color: #333; /* Dark gray heading color */
+}
+
+#navbar-links li {
+  display: inline;
+  margin: 0 1rem;
+}
+
+#navbar-links a {
+  text-decoration: none;
+  color: #555; /* Slightly lighter link color */
+  padding: 0.5rem 1rem; /* Add padding around links */
+  border-radius: 5px; /* Round the link corners */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+}
+
+#navbar-links a:hover {
+  background-color: #ddd; /* Light gray on hover */
+  color: #333; /* Darker text on hover */
+}
