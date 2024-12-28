@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
-import "../styles/Navbar.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
+import "../styles/Navbar.css";
 
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -11,11 +12,13 @@ function Navbar() {
 
   return (
     <div id="navbar-container">
-      <h1>Virtual Vogue</h1>
-      <button id="mobile-menu-toggle" onClick={toggleMobileMenu}>
-        {/* You can use an icon here (e.g., hamburger icon) */}
-        <span>&#9776;</span> {/* Hamburger icon */}
-      </button>
+      <div id="navbar-heading-and-button">
+        <h1>Virtual Vogue</h1>
+        <button id="mobile-menu-toggle" onClick={toggleMobileMenu}>
+          <span>&#9776;</span> {/* Hamburger icon */}
+        </button>
+      </div>
+
       <nav
         id="navbar-links"
         className={isMobileMenuOpen ? "mobile-menu-open" : ""}

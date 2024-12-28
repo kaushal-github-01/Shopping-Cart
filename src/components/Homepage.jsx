@@ -17,7 +17,7 @@ function Homepage() {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3, // Show 3 slides at a time
+    slidesToShow: 4, // Show 4 slides at a time
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
