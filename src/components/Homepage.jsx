@@ -9,6 +9,8 @@ import image1 from "../assets/Clothes/clothes-img1.jpeg";
 import image2 from "../assets/Clothes/clothes-img2.jpeg";
 import image3 from "../assets/Clothes/clothes-img3.jpeg";
 import image4 from "../assets/Clothes/clothes-img4.jpeg";
+import image5 from "../assets/Clothes/clothes-img5.jpeg";
+import image6 from "../assets/Clothes/clothes-img6.jpeg";
 
 function Homepage() {
   const settings = {
@@ -54,6 +56,12 @@ function Homepage() {
             </div>
             <div>
               <img src={image4} alt="image4" />
+            </div>
+            <div>
+              <img src={image5} alt="image5" />
+            </div>
+            <div>
+              <img src={image6} alt="image6 " />
             </div>
           </Slider>
         </div>
