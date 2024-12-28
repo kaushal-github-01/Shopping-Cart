@@ -1,8 +1,7 @@
 import App from "./App";
 import ErrorPage from "./ErrorPage";
-import Shop from "./components/Shop/Shop";
+import Shop from "./components/Shop";
 import Homepage from "./components/Homepage";
-//No need to import Navbar here
 
 const routes = [
   {
