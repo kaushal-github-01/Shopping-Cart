@@ -1,14 +1,17 @@
-import { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-
+import { CartContext } from "./CartContext"; // Import CartContext
 import "../styles/Navbar.css";
 
 function Navbar() {
+  const { cartItems } = useContext(CartContext); // Access cart items
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
+  const cartItemCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
     <div id="navbar-container">
@@ -31,7 +34,9 @@ function Navbar() {
             <Link to="/shop">Shop</Link>
           </li>
           <li>
-            <Link to="/cart">Cart</Link>
+            <Link to="/cart">
+              Cart {cartItemCount > 0 ? `(${cartItemCount})` : ""}
+            </Link>
           </li>
         </ul>
       </nav>

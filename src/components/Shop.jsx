@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import axios from "axios";
 import "../styles/Shop.css";
+import { CartContext } from "./CartContext"; // Import CartContext
 
 function Shop() {
+  const { addToCart } = useContext(CartContext); // Access addToCart function
+
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-
-  // State for item quantities (map item IDs to quantities)
   const [itemQuantities, setItemQuantities] = useState({});
 
   useEffect(() => {
@@ -27,7 +28,10 @@ function Shop() {
   }, []);
 
   const handleChangeQuantity = (itemId, newQuantity) => {
-    setItemQuantities({ ...itemQuantities, [itemId]: newQuantity });
+    // Validate and limit quantity before updating state
+    const limitedQuantity = Math.min(Math.max(0, newQuantity), 999); // Ensure quantity is between 0 and 999
+
+    setItemQuantities({ ...itemQuantities, [itemId]: limitedQuantity });
   };
 
   const handleDecrement = (itemId) => {
@@ -50,12 +54,25 @@ function Shop() {
     return <div className="error">Error: {error.message}</div>;
   }
 
+  const addToCartHandler = (item) => {
+    const quantity = itemQuantities[item.id] || 0;
+    if (quantity > 0) {
+      if (quantity > 999) {
+        alert("Warehouse limit exceeded! Maximum quantity is 999.");
+      } else {
+        addToCart({ ...item, quantity }); // Pass item with quantity to context
+      }
+    } else {
+      alert("Please select a quantity before adding to cart.");
+    }
+  };
+
   return (
     <div id="shop-container">
       {items.map((item) => (
         <div className="shop-item" key={item.id}>
           <img src={item.image} alt={item.title} />
-          <div className="item-details">
+          <div className="shop-item-details">
             <h3>{item.title}</h3>
             <p>${item.price}</p>
             <div className="quantity-control">
@@ -70,7 +87,7 @@ function Shop() {
               />
               <button onClick={() => handleIncrement(item.id)}>+</button>
             </div>
-            <button>Add to Cart</button>
+            <button onClick={() => addToCartHandler(item)}>Add to Cart</button>
           </div>
         </div>
       ))}

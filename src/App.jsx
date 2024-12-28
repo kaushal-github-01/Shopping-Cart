@@ -1,15 +1,16 @@
-import { Outlet } from "react-router-dom"; //Import outlet
-
+import { Outlet } from "react-router-dom";
 import "./App.css";
-
 import Navbar from "./components/Navbar";
+import { CartProvider } from "./components/CartContext";
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <Outlet /> {/* Outlet renders the child route */}
-    </>
+    <CartProvider>
+      <>
+        <Navbar />
+        <Outlet />
+      </>
+    </CartProvider>
   );
 }
 

@@ -27,9 +27,10 @@
   width: auto;
   object-fit: contain;
   display: block;
+  margin: 1rem;
 }
 
-.item-details {
+.shop-item-details {
   padding: 15px;
   text-align: center;
 }
@@ -45,16 +46,24 @@
   margin: 0 1rem;
   width: 5rem;
   text-align: center;
-
   border: 1px solid #ccc;
-  cursor: pointer;
   border-radius: 4px;
   font-size: large;
-
   height: 3rem;
+  /* Hide the number input arrows */
+  -webkit-appearance: textfield; /* For Chrome, Safari, and Opera */
+  -moz-appearance: textfield; /* For Firefox */
+  appearance: textfield; /* Standard syntax */
 }
 
-.item-details button {
+/* For IE 10+ and Edge */
+.quantity-control input::-webkit-inner-spin-button,
+.quantity-control input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.shop-item-details button {
   background-color: #007bff;
   color: #fff;
   font-size: large;
@@ -71,7 +80,7 @@
   height: 3rem;
 }
 
-.item-details button:hover {
+.shop-item-details button:hover {
   background-color: #0056b3;
 }
 
@@ -88,10 +97,6 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 10px;
     padding: 10px;
-  }
-
-  .shop-item img {
-    height: 150px;
   }
 }
 
