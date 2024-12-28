@@ -11,13 +11,17 @@ import image3 from "../assets/Clothes/clothes-img3.jpeg";
 import image4 from "../assets/Clothes/clothes-img4.jpeg";
 import image5 from "../assets/Clothes/clothes-img5.jpeg";
 import image6 from "../assets/Clothes/clothes-img6.jpeg";
+import image7 from "../assets/Clothes/clothes-img7.jpeg";
+import image8 from "../assets/Clothes/clothes-img8.jpeg";
+import image9 from "../assets/Clothes/clothes-img9.jpeg";
+import image10 from "../assets/Clothes/clothes-img10.jpeg";
 
 function Homepage() {
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4, // Show 4 slides at a time
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
@@ -62,6 +66,18 @@ function Homepage() {
             </div>
             <div>
               <img src={image6} alt="image6 " />
+            </div>
+            <div>
+              <img src={image7} alt="image7 " />
+            </div>
+            <div>
+              <img src={image8} alt="image8 " />
+            </div>
+            <div>
+              <img src={image9} alt="image9 " />
+            </div>
+            <div>
+              <img src={image10} alt="image10 " />
             </div>
           </Slider>
         </div>

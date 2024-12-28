@@ -7,6 +7,9 @@
 }
 
 .shop-item {
+  display: flex;
+  flex-direction: column;
+
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
@@ -20,9 +23,9 @@
 }
 
 .shop-item img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+  height: 10rem;
+  width: auto;
+  object-fit: contain;
   display: block;
 }
 
@@ -31,18 +34,44 @@
   text-align: center;
 }
 
-.item-details h3 {
-  margin-bottom: 0.5rem;
+.quantity-control {
+  display: flex; /* Arrange items in a row */
+  align-items: center; /* Vertically align items */
+  justify-content: center; /* Center horizontally */
+  margin-bottom: 1rem; /* Space above the "Buy Now" button */
 }
+
+/* Currently Checking */
+
+.quantity-control input {
+  margin: 0 1rem;
+  width: 5rem;
+  text-align: center;
+
+  border: 1px solid #ccc;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: large;
+
+  height: 3rem;
+}
+
+/* Checked */
 
 .item-details button {
   background-color: #007bff;
   color: #fff;
-  padding: 0.75rem 1.5rem;
+  padding: 1rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: 100%; /* Make button take full width */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
 }
 
 .item-details button:hover {
@@ -58,13 +87,9 @@
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-  /* Styles for screens smaller than 768px (typical tablet/mobile) */
   #shop-container {
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(200px, 1fr)
-    ); /* Adjust minmax for smaller screens */
-    grid-gap: 10px; /* Reduce gap on smaller screens */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 10px;
     padding: 10px;
   }
 
@@ -74,8 +99,7 @@
 }
 
 @media (max-width: 480px) {
-  /* Styles for even smaller screens (typical mobile phones) */
   #shop-container {
-    grid-template-columns: 1fr; /* One column on very small screens */
+    grid-template-columns: 1fr;
   }
 }
