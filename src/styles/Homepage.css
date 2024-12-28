@@ -1,3 +1,9 @@
 #homepage-container {
   padding: 1rem;
 }
+
+#homepage-slider-images img {
+  height: 20rem;
+  width: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Prevents image distortion */
+}
