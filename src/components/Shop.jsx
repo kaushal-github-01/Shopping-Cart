@@ -70,9 +70,7 @@ function Shop() {
               />
               <button onClick={() => handleIncrement(item.id)}>+</button>
             </div>
-            <button>
-              Add to Cart (Quantity: {itemQuantities[item.id] || 0})
-            </button>
+            <button>Add to Cart</button>
           </div>
         </div>
       ))}
